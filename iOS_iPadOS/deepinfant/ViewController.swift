@@ -49,11 +49,7 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.startAudioEngine()
-        
         configure()
-       // self.startAudioEngine()
-       // print("Result....")
     }
     
     
