@@ -3,8 +3,7 @@
 
 DeepInfant® is a Neural network system designed to predict whether and why your baby is crying.
 
-![](https://github.com/skytells-research/DeepInfant/Assets/banner.png)
-
+![](https://raw.githubusercontent.com/skytells-research/DeepInfant/main/Assets/banner.png)
 
 DeepInfant uses artificial intelligence and machine learning algorithms to determine which acoustic features are associated with which one of baby's needs.
 
