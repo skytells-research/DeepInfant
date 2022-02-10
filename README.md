@@ -156,6 +156,10 @@ The structure is the same with the exception that the unix epoch timestamp is in
 - ti - tired
 
 
+## Contact
+Please feel free to contact us if you need any further assistance.
+
+
 ## License
 Apache License
 Version 2.0, January 2004
