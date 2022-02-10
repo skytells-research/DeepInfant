@@ -15,6 +15,7 @@
 		A145856327B561A90027A2FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A145856127B561A90027A2FF /* LaunchScreen.storyboard */; };
 		A145856C27B561F80027A2FF /* DeepInfant_VGGish.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A145856B27B561F80027A2FF /* DeepInfant_VGGish.mlmodel */; };
 		A145856E27B5637F0027A2FF /* ResultsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = A145856D27B5637F0027A2FF /* ResultsObserver.swift */; };
+		A145857027B5947F0027A2FF /* DeepInfant_AFP.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A145856F27B5947F0027A2FF /* DeepInfant_AFP.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		A145856427B561A90027A2FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A145856B27B561F80027A2FF /* DeepInfant_VGGish.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepInfant_VGGish.mlmodel; sourceTree = "<group>"; };
 		A145856D27B5637F0027A2FF /* ResultsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsObserver.swift; sourceTree = "<group>"; };
+		A145856F27B5947F0027A2FF /* DeepInfant_AFP.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DeepInfant_AFP.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A145856B27B561F80027A2FF /* DeepInfant_VGGish.mlmodel */,
+				A145856F27B5947F0027A2FF /* DeepInfant_AFP.mlmodel */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A145857027B5947F0027A2FF /* DeepInfant_AFP.mlmodel in Sources */,
 				A145855B27B561A80027A2FF /* ViewController.swift in Sources */,
 				A145855727B561A80027A2FF /* AppDelegate.swift in Sources */,
 				A145856C27B561F80027A2FF /* DeepInfant_VGGish.mlmodel in Sources */,

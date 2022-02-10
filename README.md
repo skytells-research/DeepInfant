@@ -3,35 +3,20 @@
 
 DeepInfant® is a Neural network system designed to predict whether and why your baby is crying.
 
-
-![](https://github.com/skytells-research/DeepInfant/Assets/banner.png)
-
+![](https://raw.githubusercontent.com/skytells-research/DeepInfant/main/Assets/banner.png)
 
 DeepInfant uses artificial intelligence and machine learning algorithms to determine which acoustic features are associated with which one of baby's needs.
 
 For example, babies who are in pain demonstrate cries with high energy, while a fussy cry may have more periods of silence. We are preparing our findings for academic review and publication within a single well trained model based on academic datasets.
 
 
-  ## How it works!
-  
+## Summary
+DeepInfant is a machine learning model that uses arts of artificial intelligence to predict your baby's needs based on sound classification of cries.
 
-```mermaid
-
-graph LR
-
-A[iOS App] -- Microphone --> B((DeepInfant - IOStream))
-
-A --> C(DeepInfant - File )
-
-B --> D{Results}
-
-C --> D
-
-```
-  
 
 ## Dataset
 DeepInfant has used as part of final project in Speech Technology Course in KTH (Royal Institute of Technology Sweden)
+
 
 ## iOS Models
 This repo is published with pre-trained CoreML Models.
@@ -43,6 +28,11 @@ This repo is published with pre-trained CoreML Models.
 | DeepInfant_VGGish  | DeepInfant_AFP  |
 | :-: | :-: |
 | Trained with a feature extractor that uses extra layers for classification with a fixed window duration of 975ms | Trained with a feature extractor that optimized for speed with support of a flexible window duration. |
+
+
+## iOS and iPadOS App
+This repo contains an example of using `DeepInfant_VGGish` model to build an iOS app that analyzes baby's cry sound with and push a prediction results with a tip of how to deal with each predicted result.
+
 
 ## Building a model
 
@@ -171,16 +161,16 @@ Apache License
 Version 2.0, January 2004
 http://www.apache.org/licenses/
 
-   Copyright 2022 Skytells AI Research
+Copyright 2022 Skytells AI Research
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
