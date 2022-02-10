@@ -37,7 +37,7 @@ This repo contains an example of using `DeepInfant_VGGish` model to build an iOS
 ## Building a model
 
 The audio clips have a sample rate of 16000 Hz and a duration of about ~7 secs. This means there are about 16000*7 numbers per second representing the audio data. We take a fast fourier transform (FFT) of a 2048 sample window, slide it by 512 samples and repeat the process of the 7 sec clip. The resulting representation can be shown as a 2D image and is called a Short-Time Fourier Transform (STFT). Since humans perceive sound on a logarithmic scale, we’ll convert the STFT to the [mel scale](https://en.wikipedia.org/wiki/Mel_scale). The  [librosa](https://librosa.github.io/librosa/)  library lets us load an audio file and convert it to a melspectrogram
- 
+
  ```python
 import librosa
 import librosa.display
@@ -89,7 +89,7 @@ After training the model over a few epochs, we see an accuracy of 95% over the v
 ![](https://miro.medium.com/max/1400/1*eQZlcUIeR91Vtc1WIhKlNA.png)
 
 
-  
+
 ### Predicting over realtime audio samples
 
 Now that we have a really good model, in order to use it in a real application, we need to be able to run predictions over an audio stream in real time.
