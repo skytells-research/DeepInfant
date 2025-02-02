@@ -1,0 +1,8 @@
+torch>=2.0.0
+torchaudio>=2.0.0
+librosa>=0.10.0
+numpy>=1.21.0
+pandas>=1.5.0
+tqdm>=4.65.0
+scikit-learn>=1.0.0
+pathlib>=1.0.1 
