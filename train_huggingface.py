@@ -109,7 +109,7 @@ def main():
     
     # Define training arguments
     training_args = TrainingArguments(
-        output_dir="./results",
+        output_dir="./deepinfant",
         num_train_epochs=50,
         per_device_train_batch_size=32,
         per_device_eval_batch_size=32,
@@ -118,6 +118,7 @@ def main():
         load_best_model_at_end=True,
         push_to_hub=True,
         logging_dir='./logs',
+        hub_model_id="deepinfant",
     )
     
     # Initialize trainer
