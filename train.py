@@ -18,16 +18,34 @@ class DeepInfantDataset(Dataset):
         self.samples = []
         self.labels = []
         
-        # Label mapping based on README conventions
+        # Updated label mapping based on new classes
         self.label_map = {
-            'hu': 0,  # hungry
-            'bu': 1,  # needs burping
-            'bp': 2,  # belly pain
+            'bp': 0,  # belly pain
+            'bu': 1,  # burping
+            'ch': 2,  # cold/hot
             'dc': 3,  # discomfort
-            'ti': 4,  # tired
+            'hu': 4,  # hungry
+            'lo': 5,  # lonely
+            'sc': 6,  # scared
+            'ti': 7,  # tired
+            'un': 8,  # unknown
         }
         
-        self._load_dataset()
+        # Load metadata if available
+        metadata_file = Path(data_dir).parent / 'metadata.csv'
+        if metadata_file.exists():
+            self._load_from_metadata(metadata_file)
+        else:
+            self._load_dataset()
+    
+    def _load_from_metadata(self, metadata_file):
+        df = pd.read_csv(metadata_file)
+        for _, row in df.iterrows():
+            if row['split'] == self.data_dir.name:  # 'train' or 'test'
+                audio_path = self.data_dir / row['filename']
+                if audio_path.exists():
+                    self.samples.append(str(audio_path))
+                    self.labels.append(self.label_map[row['class_code']])
     
     def _load_dataset(self):
         for audio_file in self.data_dir.glob('*.*'):
@@ -95,7 +113,7 @@ class DeepInfantDataset(Dataset):
         return mel_spec, label
 
 class DeepInfantModel(nn.Module):
-    def __init__(self, num_classes=5):
+    def __init__(self, num_classes=9):
         super(DeepInfantModel, self).__init__()
         
         # CNN layers with residual connections
@@ -222,11 +240,9 @@ def main():
     # Set device
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
-    # Create dataset
-    dataset = DeepInfantDataset('Data/v2')
-    train_size = int(0.8 * len(dataset))
-    val_size = len(dataset) - train_size
-    train_dataset, val_dataset = torch.utils.data.random_split(dataset, [train_size, val_size])
+    # Create datasets using processed data
+    train_dataset = DeepInfantDataset('processed_dataset/train', transform=True)
+    val_dataset = DeepInfantDataset('processed_dataset/test', transform=False)
     
     # Create data loaders
     train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
